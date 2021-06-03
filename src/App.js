@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./index.css";
+import React, { useState,useContext } from "react";
+import {Container,Row,Navbar} from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faFileAlt,} from "@fortawesome/free-solid-svg-icons";
+import { AppProvider } from "./context/context"; 
+import { AddNote } from "../src/components/AddNote";
+import { Note } from "../src/components/Note";
+import { NoteList } from "../src/components/NoteList";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+     <AppProvider>
+        <Navbar expand="lg">
+          <h1 className="text-center">
+            <FontAwesomeIcon icon={faFileAlt} /> Mis Notas
+          </h1>
+        </Navbar>
+        <Container
+          className="d-flex justify-content-center align-items-center h-100"
+          fluid
         >
-          Learn React
-        </a>
-      </header>
+          <Row>
+            <AddNote/>
+            <Note/>
+            <NoteList/>
+        </Row>
+        </Container>
+        </AppProvider>
     </div>
   );
 }
