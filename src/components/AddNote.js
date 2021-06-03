@@ -15,7 +15,7 @@ export function AddNote() {
     };
      
     return (
-        <section>
+        <>
            <Col md={12} className="space center">
               <Button
                 variant="dark"
@@ -27,6 +27,6 @@ export function AddNote() {
                 Agregar Nota
               </Button>
             </Col>
-        </section>
+        </>
     );
 }

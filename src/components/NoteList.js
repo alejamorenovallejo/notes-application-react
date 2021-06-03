@@ -43,7 +43,7 @@ export function NoteList() {
   };
 
   return (
-      <section>
+      <>
           {listNotes.map((elem) =>  (
           <Col className="col-md-3" key={elem.id}>
             <Card className={`bg-${elem.color}`}>
@@ -58,7 +58,7 @@ export function NoteList() {
             </Card>
           </Col>
           ))}
-      </section>
+      </>
   );
 }
 

@@ -11,7 +11,7 @@ import {
 
 export function Note() {
     const {setShow,show,setListNotes,listNotes,filterData,hidden,texto,hiddenDelete,setFilterData,id} = useContext(AppContext);
-    
+
     //Modal Close
     const handleClose = () => setShow(false);
 
@@ -76,7 +76,7 @@ export function Note() {
   }
 
   return(
-    <section>
+    <>
         <Modal show={show} onHide={handleClose}  >
             <Modal.Header closeButton className={`bg-${filterData.color}`}>
                 <Modal.Title >{texto} Nota</Modal.Title>
@@ -115,6 +115,6 @@ export function Note() {
               <Button variant="primary" onClick={() => {deleteNote(id)}}>Si</Button>
             </Modal.Footer>
           </Modal>
-    </section>
+    </>
   )
 }
